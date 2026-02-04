@@ -120,6 +120,8 @@ html {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
 }
 
 .text-gradient-slate {

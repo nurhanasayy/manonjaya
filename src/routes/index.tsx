@@ -6,7 +6,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { HeroSection } from "../components/landing/HeroSection";
 // import { HowItWorks } from "../components/landing/HowItWorks";
 // import { LocationContact } from "../components/landing/LocationContact";
-// import { ProductCategories } from "../components/landing/ProductCategories";
+import { ProductCategories } from "../components/landing/ProductCategories";
 // import { TrustIndicators } from "../components/landing/TrustIndicators";
 // import { WhyChooseUs } from "../components/landing/WhyChooseUs";
 import { Navbar } from "../components/layout/Navbar";
@@ -18,8 +18,7 @@ function App() {
 		<main>
 			<Navbar />
 			<HeroSection />
-			{/* Sections temporarily hidden */}
-			{/* <ProductCategories /> */}
+			<ProductCategories />
 			{/* <CustomServices /> */}
 			{/* <WhyChooseUs /> */}
 			{/* <HowItWorks /> */}
