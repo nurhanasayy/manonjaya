@@ -18,7 +18,7 @@
 	] as const;
 
 	const heroStats = [
-		"Stok harian tukang",
+		"Stok harian bangunan",
 		"Eceran dan proyek",
 		"Pengiriman lokal"
 	];
@@ -42,7 +42,7 @@
 		{
 			name: "Instalasi & perlengkapan",
 			summary: "Kebutuhan air, listrik, perekat, dan pekerjaan harian.",
-			examples: "Pipa, kabel, saklar, stop kontak, lem, sealant, alat tukang"
+			examples: "Pipa, kabel, saklar, stop kontak, lem, sealant, alat kerja"
 		}
 	];
 
@@ -298,7 +298,7 @@
 			<p class="eyebrow">Siap belanja material?</p>
 			<h2 id="final-cta-title">Kirim daftar barang, kami bantu cek dari toko.</h2>
 			<p>
-				Untuk renovasi kecil, kebutuhan harian tukang, atau persiapan proyek,
+				Untuk renovasi kecil, kebutuhan perbaikan harian, atau persiapan proyek,
 				mulai dari WhatsApp. Kami bantu cek stok, pilihan barang, dan langkah
 				pesanan berikutnya.
 			</p>
