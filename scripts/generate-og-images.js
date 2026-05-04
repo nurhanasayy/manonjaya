@@ -13,7 +13,6 @@ const colors = {
 	forest: "#1f3424",
 	forestSoft: "#314d37",
 	clay: "#a85232",
-	brick: "#753721",
 	sand: "#d9c5a5",
 	steel: "#53616a",
 	muted: "#6e675d"

@@ -11,9 +11,9 @@
 	const ogImagePath = "/og/home.png";
 	const ogImageUrl = `${siteUrl}${ogImagePath}`;
 	const ogImageAlt =
-		"Material bangunan seperti semen, bata, besi, pipa, cat, dan keramik untuk TB. Manon Jaya Putra di Sukabumi.";
+		"Material bangunan seperti besi, pipa, cat, plafon, pintu, dan perlengkapan bangunan untuk TB. Manon Jaya Putra di Sukabumi.";
 	const seoKeywords =
-		"TB Manon Jaya Putra, toko bahan bangunan Sukabumi, bahan bangunan Sukabumi, toko bangunan Sukabumi, material bangunan Sukabumi, toko material Cisaat, bahan bangunan Cisaat, semen Sukabumi, besi beton Sukabumi, pasir Sukabumi, cat Sukabumi, keramik Sukabumi, pipa Sukabumi, Sukabumi";
+		"TB Manon Jaya Putra, toko bahan bangunan Sukabumi, bahan bangunan Sukabumi, toko bangunan Sukabumi, material bangunan Sukabumi, toko material Cisaat, bahan bangunan Cisaat, besi beton Sukabumi, cat Sukabumi, pipa Sukabumi, plafon Sukabumi, perlengkapan bangunan Sukabumi, Sukabumi";
 	const whatsappPhone = "+62 898-7543-512";
 	const whatsappUrl =
 		"https://wa.me/628987543512?text=Halo%20TB.%20Manon%20Jaya%20Putra%2C%20saya%20ingin%20bertanya%20atau%20konsultasi%20kebutuhan%20bahan%20bangunan.";
@@ -32,11 +32,6 @@
 
 	const productGroups = [
 		{
-			name: "Material dasar",
-			summary: "Untuk pondasi, dinding, dan pekerjaan awal bangunan.",
-			examples: "Semen, pasir, split, bata, batako, hebel"
-		},
-		{
 			name: "Struktur & rangka",
 			summary: "Kebutuhan rangka bangunan sampai penguat struktur.",
 			examples: "Besi beton, wiremesh, baja ringan, kayu, triplek"
@@ -44,7 +39,7 @@
 		{
 			name: "Finishing rumah",
 			summary: "Barang untuk membuat bangunan siap dipakai dan terlihat rapi.",
-			examples: "Cat, keramik, plafon, pintu, engsel, kunci"
+			examples: "Cat, plafon, pintu, engsel, kunci"
 		},
 		{
 			name: "Instalasi & perlengkapan",
@@ -261,8 +256,8 @@
 					<span>Placeholder Image</span>
 					<strong>Material display / store photo</strong>
 				</div>
-				<div class="material-stack stack-cement">Semen</div>
-				<div class="material-stack stack-brick">Bata</div>
+				<div class="material-stack stack-pipe">Pipa</div>
+				<div class="material-stack stack-paint">Cat</div>
 				<div class="material-stack stack-steel">Besi</div>
 			</div>
 
@@ -485,7 +480,7 @@
 		--forest: #1f3424;
 		--forest-soft: #314d37;
 		--clay: #a85232;
-		--brick: #753721;
+		--oxide: #753721;
 		--sand: #d9c5a5;
 		--steel: #53616a;
 		--line: rgba(29, 27, 22, 0.14);
@@ -762,7 +757,7 @@
 		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 	}
 
-	.stack-cement {
+	.stack-pipe {
 		right: 44px;
 		bottom: 250px;
 		width: min(68%, 360px);
@@ -770,7 +765,7 @@
 		background: var(--steel);
 	}
 
-	.stack-brick {
+	.stack-paint {
 		right: 80px;
 		bottom: 132px;
 		width: min(58%, 300px);
@@ -778,7 +773,7 @@
 		background:
 			linear-gradient(90deg, transparent 48%, rgba(255, 255, 255, 0.12) 49% 51%, transparent 52%),
 			linear-gradient(0deg, transparent 46%, rgba(255, 255, 255, 0.12) 47% 53%, transparent 54%),
-			var(--brick);
+			var(--oxide);
 		background-size: 76px 42px;
 	}
 
@@ -854,7 +849,7 @@
 
 	.product-grid {
 		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		border-top: 1px solid var(--line);
 		border-left: 1px solid var(--line);
 	}
@@ -1270,7 +1265,7 @@
 		background:
 			linear-gradient(90deg, rgba(246, 241, 232, 0.05) 1px, transparent 1px),
 			linear-gradient(rgba(246, 241, 232, 0.05) 1px, transparent 1px),
-			var(--brick);
+			var(--oxide);
 		background-size: 42px 42px;
 		color: var(--paper);
 	}
@@ -1491,12 +1486,12 @@
 			left: 26px;
 		}
 
-		.stack-cement {
+		.stack-pipe {
 			right: 26px;
 			bottom: 210px;
 		}
 
-		.stack-brick {
+		.stack-paint {
 			right: 42px;
 			bottom: 112px;
 		}
