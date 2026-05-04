@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
 
+	const whatsappPhone = "+62 898-7543-512";
 	const whatsappUrl =
-		"https://wa.me/6281234567890?text=Halo%20TB.%20Manon%20Jaya%2C%20saya%20ingin%20cek%20stok%20dan%20harga%20bahan%20bangunan.";
+		"https://wa.me/628987543512?text=Halo%20TB.%20Manon%20Jaya%2C%20saya%20ingin%20bertanya%20atau%20konsultasi%20kebutuhan%20bahan%20bangunan.";
 
 	const navItems = [
 		{ label: "Produk", href: "/#produk" },
@@ -54,6 +55,25 @@
 			body: "Banyak pelanggan kembali karena sudah mengenal cara kami melayani, memberi informasi, dan membantu kebutuhan proyek."
 		}
 	];
+
+	const orderSteps = [
+		{
+			title: "Kirim pesan WhatsApp",
+			body: "Hubungi nomor WhatsApp kami untuk bertanya, konsultasi, atau mulai memesan kebutuhan bahan bangunan."
+		},
+		{
+			title: "Sampaikan kebutuhan",
+			body: "Kirim daftar barang, foto contoh, ukuran, jumlah, atau kebutuhan proyek yang sedang dikerjakan."
+		},
+		{
+			title: "Kami bantu cek",
+			body: "Tim kami akan membantu cek ketersediaan barang, pilihan ukuran atau merek, dan estimasi harga."
+		},
+		{
+			title: "Lanjutkan pesanan",
+			body: "Setelah cocok, pesanan bisa dilanjutkan untuk diambil di toko atau dibantu dengan opsi pengiriman."
+		}
+	];
 </script>
 
 <svelte:head>
@@ -94,7 +114,7 @@
 
 			<div class="hero-actions" aria-label="Aksi utama">
 				<a class="button button-primary" href={whatsappUrl}>Cek Stok via WhatsApp</a>
-				<a class="button button-secondary" href="tel:+6281234567890">Hubungi Toko</a>
+				<a class="button button-secondary" href="tel:+628987543512">Hubungi Toko</a>
 			</div>
 
 			<ul class="trust-list" aria-label="Keunggulan cepat">
@@ -184,6 +204,37 @@
 					<p>{point.body}</p>
 				</article>
 			{/each}
+		</div>
+	</section>
+
+	<section id="cara-pesan" class="order-section" aria-labelledby="order-title">
+		<div class="order-heading">
+			<p class="eyebrow">Cara pesan dan konsultasi</p>
+			<h2 id="order-title">Mulai dari satu pesan WhatsApp.</h2>
+			<p>
+				Untuk bertanya, cek barang, konsultasi kebutuhan, atau mulai memesan,
+				cukup hubungi nomor WhatsApp TB. Manon Jaya.
+			</p>
+		</div>
+
+		<div class="order-panel">
+			<div class="whatsapp-card">
+				<span>WhatsApp aktif</span>
+				<strong>{whatsappPhone}</strong>
+				<a href={whatsappUrl}>Kirim Pesan WhatsApp</a>
+			</div>
+
+			<div class="order-steps">
+				{#each orderSteps as step, index (step.title)}
+					<article class="order-step">
+						<span>{String(index + 1).padStart(2, "0")}</span>
+						<div>
+							<h3>{step.title}</h3>
+							<p>{step.body}</p>
+						</div>
+					</article>
+				{/each}
+			</div>
 		</div>
 	</section>
 </main>
@@ -767,6 +818,128 @@
 		line-height: 1.55;
 	}
 
+	.order-section {
+		padding: clamp(64px, 8vw, 112px) clamp(18px, 5vw, 72px);
+		background:
+			linear-gradient(90deg, rgba(29, 27, 22, 0.035) 1px, transparent 1px),
+			linear-gradient(rgba(29, 27, 22, 0.035) 1px, transparent 1px),
+			var(--paper);
+		background-size: 42px 42px;
+	}
+
+	.order-heading {
+		display: grid;
+		grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.5fr);
+		align-items: end;
+		gap: clamp(28px, 6vw, 80px);
+		margin-bottom: clamp(32px, 5vw, 58px);
+	}
+
+	.order-heading .eyebrow {
+		grid-column: 1 / -1;
+		margin-bottom: -8px;
+	}
+
+	.order-heading h2 {
+		max-width: 900px;
+		font-size: clamp(2.5rem, 5.8vw, 6.4rem);
+		text-transform: uppercase;
+	}
+
+	.order-heading p:not(.eyebrow) {
+		margin: 0;
+		color: var(--muted);
+		font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+		font-weight: 550;
+		line-height: 1.62;
+	}
+
+	.order-panel {
+		display: grid;
+		grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
+		gap: 18px;
+		align-items: stretch;
+	}
+
+	.whatsapp-card {
+		display: grid;
+		align-content: space-between;
+		min-height: 390px;
+		padding: clamp(24px, 3vw, 36px);
+		background: var(--forest);
+		color: var(--paper);
+		box-shadow: 0 24px 58px rgba(31, 52, 36, 0.18);
+	}
+
+	.whatsapp-card span {
+		color: var(--sand);
+		font-size: 0.78rem;
+		font-weight: 900;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.whatsapp-card strong {
+		font-family: var(--font-heading);
+		font-size: clamp(2rem, 3vw, 3.25rem);
+		line-height: 0.95;
+		letter-spacing: -0.06em;
+	}
+
+	.whatsapp-card a {
+		display: inline-flex;
+		min-height: 54px;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid rgba(217, 197, 165, 0.72);
+		padding: 0 18px;
+		font-weight: 900;
+		text-align: center;
+	}
+
+	.whatsapp-card a:hover {
+		background: var(--sand);
+		color: var(--forest);
+	}
+
+	.order-steps {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		border-top: 1px solid var(--line);
+		border-left: 1px solid var(--line);
+	}
+
+	.order-step {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		gap: 18px;
+		min-height: 186px;
+		padding: clamp(20px, 2.6vw, 30px);
+		border-right: 1px solid var(--line);
+		border-bottom: 1px solid var(--line);
+		background: rgba(255, 250, 240, 0.5);
+	}
+
+	.order-step > span {
+		color: var(--clay);
+		font-family: var(--font-heading);
+		font-size: 0.95rem;
+		font-weight: 900;
+	}
+
+	.order-step h3 {
+		font-size: clamp(1.45rem, 2vw, 2rem);
+		text-transform: uppercase;
+	}
+
+	.order-step p {
+		margin: 12px 0 0;
+		color: var(--muted);
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.5;
+	}
+
 	@media (max-width: 980px) {
 		.site-header {
 			align-items: flex-start;
@@ -791,7 +964,13 @@
 		}
 
 		.why-story,
-		.trust-grid {
+		.trust-grid,
+		.order-heading,
+		.order-panel {
+			grid-template-columns: 1fr;
+		}
+
+		.order-steps {
 			grid-template-columns: 1fr;
 		}
 
@@ -890,6 +1069,19 @@
 		}
 
 		.trust-card {
+			min-height: auto;
+		}
+
+		.order-section {
+			padding: 56px 18px;
+		}
+
+		.whatsapp-card {
+			min-height: 260px;
+		}
+
+		.order-step {
+			grid-template-columns: 1fr;
 			min-height: auto;
 		}
 	}
