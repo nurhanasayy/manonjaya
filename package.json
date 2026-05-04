@@ -5,7 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --host 0.0.0.0 --port 3000",
-		"build": "vite build",
+		"generate:og": "node scripts/generate-og-images.js",
+		"build": "node scripts/generate-og-images.js && vite build",
 		"preview": "vite preview",
 		"preview:cloudflare": "pnpm build && wrangler pages dev .svelte-kit/cloudflare",
 		"deploy": "pnpm build && wrangler pages deploy .svelte-kit/cloudflare",
@@ -16,6 +17,7 @@
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^6.0.0",
 		"@types/node": "^25.6.0",
+		"sharp": "^0.34.5",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",

@@ -7,6 +7,10 @@
 	const pageTitle = `${siteName} | Toko Bahan Bangunan Sukabumi`;
 	const pageDescription =
 		"TB. Manon Jaya Putra adalah toko bahan bangunan di Cisaat, Sukabumi yang menyediakan material untuk renovasi, pembangunan rumah, dan kebutuhan proyek. Cek stok dan harga lewat WhatsApp.";
+	const ogImagePath = "/og/home.png";
+	const ogImageUrl = `${siteUrl}${ogImagePath}`;
+	const ogImageAlt =
+		"Material bangunan seperti semen, bata, besi, pipa, cat, dan keramik untuk TB. Manon Jaya Putra di Sukabumi.";
 	const seoKeywords =
 		"TB Manon Jaya Putra, toko bahan bangunan Sukabumi, bahan bangunan Sukabumi, toko bangunan Sukabumi, material bangunan Sukabumi, toko material Cisaat, bahan bangunan Cisaat, semen Sukabumi, besi beton Sukabumi, pasir Sukabumi, cat Sukabumi, keramik Sukabumi, pipa Sukabumi, Sukabumi";
 	const whatsappPhone = "+62 898-7543-512";
@@ -160,7 +164,10 @@
 				},
 				primaryImageOfPage: {
 					"@type": "ImageObject",
-					url: `${siteUrl}/favicon.svg`
+					url: ogImageUrl,
+					width: 1200,
+					height: 630,
+					caption: ogImageAlt
 				}
 			}
 		]
@@ -192,14 +199,22 @@
 	<meta property="og:title" content={pageTitle} />
 	<meta property="og:description" content={pageDescription} />
 	<meta property="og:url" content={pageUrl} />
+	<meta property="og:image" content={ogImageUrl} />
+	<meta property="og:image:secure_url" content={ogImageUrl} />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content={ogImageAlt} />
 	<meta property="business:contact_data:street_address" content="Jl. Raya Cisaat No.274" />
 	<meta property="business:contact_data:locality" content="Cisaat" />
 	<meta property="business:contact_data:region" content="Jawa Barat" />
 	<meta property="business:contact_data:postal_code" content="43152" />
 	<meta property="business:contact_data:country_name" content="Indonesia" />
-	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={pageTitle} />
 	<meta name="twitter:description" content={pageDescription} />
+	<meta name="twitter:image" content={ogImageUrl} />
+	<meta name="twitter:image:alt" content={ogImageAlt} />
 	<svelte:element this={scriptTag} type="application/ld+json">{jsonLdString}</svelte:element>
 </svelte:head>
 
