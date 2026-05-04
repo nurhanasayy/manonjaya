@@ -4,12 +4,17 @@
 	const whatsappPhone = "+62 898-7543-512";
 	const whatsappUrl =
 		"https://wa.me/628987543512?text=Halo%20TB.%20Manon%20Jaya%2C%20saya%20ingin%20bertanya%20atau%20konsultasi%20kebutuhan%20bahan%20bangunan.";
+	const mapsUrl = "https://maps.app.goo.gl/CDskmfQb6kHVUcBr5";
+	const mapEmbedUrl =
+		"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.55436751377576!2d106.8888251!3d-6.9061593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68365792615c27%3A0xd3e5ce6d171a9859!2sTB.%20Manon%20Jaya!5e0!3m2!1sid!2sid!4v1750857509993!5m2!1sid!2sid";
+	const storeAddress =
+		"Jl. Raya Cisaat No.274, Nagrak, Kec. Cisaat, Kabupaten Sukabumi, Jawa Barat 43152";
 
 	const navItems = [
 		{ label: "Produk", href: "/#produk" },
-		{ label: "Layanan", href: "/#layanan" },
+		{ label: "Keunggulan", href: "/#layanan" },
 		{ label: "Cara Pesan", href: "/#cara-pesan" },
-		{ label: "Kontak", href: "/#kontak" }
+		{ label: "Lokasi", href: "/#kontak" }
 	] as const;
 
 	const heroStats = [
@@ -237,7 +242,111 @@
 			</div>
 		</div>
 	</section>
+
+	<section id="kontak" class="contact-section" aria-labelledby="contact-title">
+		<div class="contact-heading">
+			<p class="eyebrow">Lokasi dan kontak</p>
+			<h2 id="contact-title">Kunjungi toko atau tanya dulu lewat WhatsApp.</h2>
+			<p>
+				Datang langsung ke TB. Manon Jaya di Cisaat, Sukabumi, atau kirim pesan
+				WhatsApp untuk cek barang sebelum berangkat.
+			</p>
+		</div>
+
+		<div class="contact-layout">
+			<div class="map-frame" aria-label="Peta lokasi TB. Manon Jaya">
+				<iframe
+					src={mapEmbedUrl}
+					width="100%"
+					height="100%"
+					style="border:0"
+					allowfullscreen
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+					title="Peta lokasi TB. Manon Jaya"
+				></iframe>
+			</div>
+
+			<aside class="contact-card" aria-label="Informasi kontak TB. Manon Jaya">
+				<div class="contact-block">
+					<span>Alamat toko</span>
+					<strong>{storeAddress}</strong>
+				</div>
+
+				<div class="contact-block">
+					<span>WhatsApp / Telepon</span>
+					<strong>{whatsappPhone}</strong>
+				</div>
+
+				<div class="contact-actions">
+					<a class="button button-primary" href={whatsappUrl}>Chat WhatsApp</a>
+					<a class="button button-secondary" href={mapsUrl} target="_blank" rel="noreferrer">
+						Buka Google Maps
+					</a>
+				</div>
+
+				<p>
+					Untuk memastikan barang tersedia, kirim daftar kebutuhan Anda sebelum
+					datang ke toko.
+				</p>
+			</aside>
+		</div>
+	</section>
+
+	<section class="final-cta" aria-labelledby="final-cta-title">
+		<div class="final-cta-copy">
+			<p class="eyebrow">Siap belanja material?</p>
+			<h2 id="final-cta-title">Kirim daftar barang, kami bantu cek dari toko.</h2>
+			<p>
+				Untuk renovasi kecil, kebutuhan harian tukang, atau persiapan proyek,
+				mulai dari WhatsApp. Kami bantu cek stok, pilihan barang, dan langkah
+				pesanan berikutnya.
+			</p>
+		</div>
+
+		<div class="final-cta-actions" aria-label="Aksi penutup">
+			<a class="button button-primary" href={whatsappUrl}>Cek Kebutuhan via WhatsApp</a>
+			<a class="button button-secondary" href={mapsUrl} target="_blank" rel="noreferrer">
+				Lihat Lokasi Toko
+			</a>
+		</div>
+	</section>
 </main>
+
+<footer class="site-footer">
+	<div class="footer-brand">
+		<a class="brand" href={resolve("/")} aria-label="TB. Manon Jaya">
+			<span class="brand-mark">MJ</span>
+			<span class="brand-copy">
+				<strong>TB. Manon Jaya</strong>
+				<small>Toko Bahan Bangunan</small>
+			</span>
+		</a>
+		<p>
+			Material bangunan untuk kebutuhan rumah, renovasi, dan proyek lokal di
+			Cisaat, Sukabumi.
+		</p>
+	</div>
+
+	<div class="footer-links" aria-label="Navigasi footer">
+		<span>Navigasi</span>
+		{#each navItems as item (item.href)}
+			<a href={resolve(item.href)}>{item.label}</a>
+		{/each}
+	</div>
+
+	<div class="footer-contact">
+		<span>Kontak toko</span>
+		<a href={whatsappUrl}>{whatsappPhone}</a>
+		<address>{storeAddress}</address>
+		<a href={mapsUrl} target="_blank" rel="noreferrer">Buka di Google Maps</a>
+	</div>
+
+	<div class="footer-bottom">
+		<span>© 2026 TB. Manon Jaya</span>
+		<span>Hubungi toko untuk cek stok terbaru.</span>
+	</div>
+</footer>
 
 <style>
 	:global(:root) {
@@ -940,6 +1049,252 @@
 		line-height: 1.5;
 	}
 
+	.contact-section {
+		padding: clamp(64px, 8vw, 112px) clamp(18px, 5vw, 72px);
+		background: var(--forest);
+		color: var(--paper);
+	}
+
+	.contact-heading {
+		display: grid;
+		grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.5fr);
+		align-items: end;
+		gap: clamp(28px, 6vw, 80px);
+		margin-bottom: clamp(32px, 5vw, 58px);
+	}
+
+	.contact-heading .eyebrow {
+		grid-column: 1 / -1;
+		margin-bottom: -8px;
+		color: var(--sand);
+	}
+
+	.contact-heading h2 {
+		max-width: 980px;
+		font-size: clamp(2.5rem, 5.8vw, 6.4rem);
+		text-transform: uppercase;
+	}
+
+	.contact-heading p:not(.eyebrow) {
+		margin: 0;
+		color: rgba(246, 241, 232, 0.76);
+		font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+		font-weight: 550;
+		line-height: 1.62;
+	}
+
+	.contact-layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
+		gap: 18px;
+		align-items: stretch;
+	}
+
+	.map-frame {
+		min-height: 560px;
+		overflow: hidden;
+		border: 1px solid rgba(246, 241, 232, 0.2);
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.map-frame iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.contact-card {
+		display: grid;
+		align-content: start;
+		gap: 22px;
+		padding: clamp(24px, 3vw, 36px);
+		background: var(--paper-strong);
+		color: var(--ink);
+	}
+
+	.contact-block {
+		display: grid;
+		gap: 8px;
+		border-bottom: 1px solid var(--line);
+		padding-bottom: 20px;
+	}
+
+	.contact-block span {
+		color: var(--clay);
+		font-size: 0.78rem;
+		font-weight: 900;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.contact-block strong {
+		font-family: var(--font-heading);
+		font-size: clamp(1.35rem, 2vw, 2.15rem);
+		line-height: 1.05;
+		letter-spacing: -0.04em;
+	}
+
+	.contact-actions {
+		display: grid;
+		gap: 10px;
+	}
+
+	.contact-actions .button {
+		width: 100%;
+		text-align: center;
+	}
+
+	.contact-card p {
+		margin: 0;
+		color: var(--muted);
+		font-weight: 650;
+		line-height: 1.55;
+	}
+
+	.final-cta {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: end;
+		gap: clamp(28px, 6vw, 84px);
+		padding: clamp(64px, 8vw, 112px) clamp(18px, 5vw, 72px);
+		border-top: 1px solid rgba(246, 241, 232, 0.18);
+		background:
+			linear-gradient(90deg, rgba(246, 241, 232, 0.05) 1px, transparent 1px),
+			linear-gradient(rgba(246, 241, 232, 0.05) 1px, transparent 1px),
+			var(--brick);
+		background-size: 42px 42px;
+		color: var(--paper);
+	}
+
+	.final-cta-copy {
+		max-width: 980px;
+	}
+
+	.final-cta .eyebrow {
+		color: var(--sand);
+	}
+
+	.final-cta h2 {
+		font-size: clamp(2.5rem, 5.8vw, 6.4rem);
+		text-transform: uppercase;
+	}
+
+	.final-cta-copy p:not(.eyebrow) {
+		max-width: 690px;
+		margin: 26px 0 0;
+		color: rgba(246, 241, 232, 0.78);
+		font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+		font-weight: 550;
+		line-height: 1.62;
+	}
+
+	.final-cta-actions {
+		display: grid;
+		gap: 12px;
+		min-width: min(100%, 310px);
+	}
+
+	.final-cta .button {
+		width: 100%;
+		text-align: center;
+	}
+
+	.final-cta .button-primary {
+		background: var(--paper);
+		color: var(--forest);
+		box-shadow: 0 18px 42px rgba(29, 27, 22, 0.2);
+	}
+
+	.final-cta .button-primary:hover {
+		background: var(--sand);
+	}
+
+	.final-cta .button-secondary {
+		border-color: rgba(246, 241, 232, 0.7);
+		background: rgba(255, 250, 240, 0.08);
+		color: var(--paper);
+	}
+
+	.final-cta .button-secondary:hover {
+		background: rgba(255, 250, 240, 0.16);
+	}
+
+	.site-footer {
+		display: grid;
+		grid-template-columns: minmax(260px, 0.9fr) minmax(170px, 0.28fr) minmax(280px, 0.48fr);
+		gap: clamp(28px, 5vw, 76px);
+		padding: clamp(42px, 6vw, 72px) clamp(18px, 5vw, 72px) 28px;
+		background: var(--ink);
+		color: var(--paper);
+	}
+
+	.footer-brand {
+		display: grid;
+		align-content: start;
+		gap: 22px;
+		max-width: 560px;
+	}
+
+	.footer-brand p {
+		margin: 0;
+		color: rgba(246, 241, 232, 0.68);
+		font-size: 1.05rem;
+		font-weight: 550;
+		line-height: 1.6;
+	}
+
+	.footer-links,
+	.footer-contact {
+		display: grid;
+		align-content: start;
+		gap: 12px;
+	}
+
+	.footer-links span,
+	.footer-contact span {
+		margin-bottom: 6px;
+		color: var(--sand);
+		font-size: 0.78rem;
+		font-weight: 900;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.footer-links a,
+	.footer-contact a {
+		width: fit-content;
+		color: rgba(246, 241, 232, 0.78);
+		font-weight: 800;
+		transition: color 160ms ease;
+	}
+
+	.footer-links a:hover,
+	.footer-contact a:hover {
+		color: var(--paper);
+	}
+
+	.footer-contact address {
+		margin: 0;
+		color: rgba(246, 241, 232, 0.66);
+		font-style: normal;
+		font-weight: 600;
+		line-height: 1.52;
+	}
+
+	.footer-bottom {
+		grid-column: 1 / -1;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 12px;
+		margin-top: clamp(12px, 3vw, 26px);
+		border-top: 1px solid rgba(246, 241, 232, 0.14);
+		padding-top: 22px;
+		color: rgba(246, 241, 232, 0.52);
+		font-size: 0.94rem;
+		font-weight: 650;
+	}
+
 	@media (max-width: 980px) {
 		.site-header {
 			align-items: flex-start;
@@ -966,7 +1321,11 @@
 		.why-story,
 		.trust-grid,
 		.order-heading,
-		.order-panel {
+		.order-panel,
+		.contact-heading,
+		.contact-layout,
+		.final-cta,
+		.site-footer {
 			grid-template-columns: 1fr;
 		}
 
@@ -1083,6 +1442,22 @@
 		.order-step {
 			grid-template-columns: 1fr;
 			min-height: auto;
+		}
+
+		.contact-section {
+			padding: 56px 18px;
+		}
+
+		.map-frame {
+			min-height: 420px;
+		}
+
+		.final-cta {
+			padding: 56px 18px;
+		}
+
+		.footer-bottom {
+			display: grid;
 		}
 	}
 </style>
