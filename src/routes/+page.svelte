@@ -1,9 +1,17 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
 
+	const siteUrl = "https://manonjaya.com";
+	const pageUrl = `${siteUrl}/`;
+	const siteName = "TB. Manon Jaya Putra";
+	const pageTitle = `${siteName} | Toko Bahan Bangunan Sukabumi`;
+	const pageDescription =
+		"TB. Manon Jaya Putra adalah toko bahan bangunan di Cisaat, Sukabumi yang menyediakan material untuk renovasi, pembangunan rumah, dan kebutuhan proyek. Cek stok dan harga lewat WhatsApp.";
+	const seoKeywords =
+		"TB Manon Jaya Putra, toko bahan bangunan Sukabumi, bahan bangunan Sukabumi, toko bangunan Sukabumi, material bangunan Sukabumi, toko material Cisaat, bahan bangunan Cisaat, semen Sukabumi, besi beton Sukabumi, pasir Sukabumi, cat Sukabumi, keramik Sukabumi, pipa Sukabumi, Sukabumi";
 	const whatsappPhone = "+62 898-7543-512";
 	const whatsappUrl =
-		"https://wa.me/628987543512?text=Halo%20TB.%20Manon%20Jaya%2C%20saya%20ingin%20bertanya%20atau%20konsultasi%20kebutuhan%20bahan%20bangunan.";
+		"https://wa.me/628987543512?text=Halo%20TB.%20Manon%20Jaya%20Putra%2C%20saya%20ingin%20bertanya%20atau%20konsultasi%20kebutuhan%20bahan%20bangunan.";
 	const mapsUrl = "https://maps.app.goo.gl/CDskmfQb6kHVUcBr5";
 	const mapEmbedUrl =
 		"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.55436751377576!2d106.8888251!3d-6.9061593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68365792615c27%3A0xd3e5ce6d171a9859!2sTB.%20Manon%20Jaya!5e0!3m2!1sid!2sid!4v1750857509993!5m2!1sid!2sid";
@@ -73,14 +81,126 @@
 			body: "Setelah cocok, pesanan bisa dilanjutkan untuk diambil di toko atau dibantu dengan opsi pengiriman."
 		}
 	];
+
+	const jsonLd = {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": ["LocalBusiness", "HardwareStore", "Store"],
+				"@id": `${pageUrl}#business`,
+				name: siteName,
+				url: pageUrl,
+				description: pageDescription,
+				telephone: "+628987543512",
+				priceRange: "$$",
+				address: {
+					"@type": "PostalAddress",
+					streetAddress: "Jl. Raya Cisaat No.274",
+					addressLocality: "Cisaat",
+					addressRegion: "Jawa Barat",
+					postalCode: "43152",
+					addressCountry: "ID"
+				},
+				geo: {
+					"@type": "GeoCoordinates",
+					latitude: -6.9061593,
+					longitude: 106.8888251
+				},
+				areaServed: [
+					{
+						"@type": "City",
+						name: "Sukabumi"
+					},
+					{
+						"@type": "AdministrativeArea",
+						name: "Cisaat"
+					}
+				],
+				hasMap: mapsUrl,
+				sameAs: [mapsUrl],
+				contactPoint: {
+					"@type": "ContactPoint",
+					telephone: "+628987543512",
+					contactType: "customer service",
+					availableLanguage: ["id"]
+				},
+				makesOffer: productGroups.map((group) => ({
+					"@type": "Offer",
+					itemOffered: {
+						"@type": "Product",
+						name: group.name,
+						description: `${group.summary} Contoh: ${group.examples}.`
+					},
+					areaServed: "Sukabumi"
+				}))
+			},
+			{
+				"@type": "WebSite",
+				"@id": `${pageUrl}#website`,
+				name: siteName,
+				url: pageUrl,
+				inLanguage: "id-ID",
+				description: pageDescription,
+				publisher: {
+					"@id": `${pageUrl}#business`
+				}
+			},
+			{
+				"@type": "WebPage",
+				"@id": `${pageUrl}#webpage`,
+				url: pageUrl,
+				name: pageTitle,
+				description: pageDescription,
+				inLanguage: "id-ID",
+				isPartOf: {
+					"@id": `${pageUrl}#website`
+				},
+				about: {
+					"@id": `${pageUrl}#business`
+				},
+				primaryImageOfPage: {
+					"@type": "ImageObject",
+					url: `${siteUrl}/favicon.svg`
+				}
+			}
+		]
+	};
+
+	const jsonLdString = JSON.stringify(jsonLd);
+	const scriptTag = "script";
 </script>
 
 <svelte:head>
-	<title>TB. Manon Jaya Putra | Toko Bahan Bangunan</title>
-	<meta
-		name="description"
-		content="TB. Manon Jaya Putra menyediakan bahan bangunan lengkap untuk renovasi, pembangunan rumah, dan kebutuhan proyek. Cek stok dan harga lewat WhatsApp."
-	/>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription} />
+	<meta name="keywords" content={seoKeywords} />
+	<meta name="author" content={siteName} />
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+	<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+	<meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1" />
+	<meta name="language" content="Indonesian" />
+	<meta name="geo.region" content="ID-JB" />
+	<meta name="geo.placename" content="Sukabumi, Jawa Barat" />
+	<meta name="geo.position" content="-6.9061593;106.8888251" />
+	<meta name="ICBM" content="-6.9061593, 106.8888251" />
+	<link rel="canonical" href={pageUrl} />
+	<link rel="alternate" hreflang="id-ID" href={pageUrl} />
+	<link rel="alternate" hreflang="x-default" href={pageUrl} />
+	<meta property="og:type" content="business.business" />
+	<meta property="og:locale" content="id_ID" />
+	<meta property="og:site_name" content={siteName} />
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:description" content={pageDescription} />
+	<meta property="og:url" content={pageUrl} />
+	<meta property="business:contact_data:street_address" content="Jl. Raya Cisaat No.274" />
+	<meta property="business:contact_data:locality" content="Cisaat" />
+	<meta property="business:contact_data:region" content="Jawa Barat" />
+	<meta property="business:contact_data:postal_code" content="43152" />
+	<meta property="business:contact_data:country_name" content="Indonesia" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content={pageTitle} />
+	<meta name="twitter:description" content={pageDescription} />
+	<svelte:element this={scriptTag} type="application/ld+json">{jsonLdString}</svelte:element>
 </svelte:head>
 
 <header class="site-header">
