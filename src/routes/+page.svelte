@@ -17,12 +17,6 @@
 		{ label: "Lokasi", href: "/#kontak" }
 	] as const;
 
-	const heroStats = [
-		"Stok harian bangunan",
-		"Eceran dan proyek",
-		"Pengiriman lokal"
-	];
-
 	const productGroups = [
 		{
 			name: "Material dasar",
@@ -121,12 +115,6 @@
 				<a class="button button-primary" href={whatsappUrl}>Cek Stok via WhatsApp</a>
 				<a class="button button-secondary" href="tel:+628987543512">Hubungi Toko</a>
 			</div>
-
-			<ul class="trust-list" aria-label="Keunggulan cepat">
-				{#each heroStats as stat (stat)}
-					<li>{stat}</li>
-				{/each}
-			</ul>
 		</div>
 
 		<div class="hero-media" aria-label="Placeholder foto material bangunan">
@@ -566,23 +554,6 @@
 		border: 2px solid var(--ink);
 		background: rgba(255, 250, 240, 0.34);
 		color: var(--ink);
-	}
-
-	.trust-list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		margin: 32px 0 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.trust-list li {
-		border-left: 3px solid var(--clay);
-		padding: 8px 13px 8px 10px;
-		background: rgba(255, 250, 240, 0.58);
-		color: var(--ink);
-		font-weight: 800;
 	}
 
 	.hero-media {
@@ -1367,10 +1338,6 @@
 
 		.hero-actions .button {
 			width: 100%;
-		}
-
-		.trust-list {
-			display: grid;
 		}
 
 		.hero-media {
