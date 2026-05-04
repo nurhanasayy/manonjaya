@@ -1,0 +1,25 @@
+{
+	"name": "TB. Manon Jaya Putra",
+	"short_name": "MJP",
+	"description": "Toko bahan bangunan di Cisaat, Sukabumi.",
+	"lang": "id-ID",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"background_color": "#f6f1e8",
+	"theme_color": "#1f3424",
+	"icons": [
+		{
+			"src": "/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		}
+	]
+}

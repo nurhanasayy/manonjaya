@@ -7,6 +7,7 @@
 	const pageTitle = `${siteName} | Toko Bahan Bangunan Sukabumi`;
 	const pageDescription =
 		"TB. Manon Jaya Putra adalah toko bahan bangunan di Cisaat, Sukabumi yang menyediakan material untuk renovasi, pembangunan rumah, dan kebutuhan proyek. Cek stok dan harga lewat WhatsApp.";
+	const logoUrl = `${siteUrl}/logo-mjp.svg`;
 	const ogImagePath = "/og/home.png";
 	const ogImageUrl = `${siteUrl}${ogImagePath}`;
 	const ogImageAlt =
@@ -94,6 +95,8 @@
 				"@id": `${pageUrl}#business`,
 				name: siteName,
 				url: pageUrl,
+				logo: logoUrl,
+				image: ogImageUrl,
 				description: pageDescription,
 				telephone: "+628987543512",
 				priceRange: "$$",
