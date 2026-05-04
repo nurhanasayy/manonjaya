@@ -1,4 +1,4 @@
-# TB. Manon Jaya
+# TB. Manon Jaya Putra
 
 Minimal SvelteKit project.
 

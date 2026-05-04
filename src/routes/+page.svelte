@@ -82,18 +82,18 @@
 </script>
 
 <svelte:head>
-	<title>TB. Manon Jaya | Toko Bahan Bangunan</title>
+	<title>TB. Manon Jaya Putra | Toko Bahan Bangunan</title>
 	<meta
 		name="description"
-		content="TB. Manon Jaya menyediakan bahan bangunan lengkap untuk renovasi, pembangunan rumah, dan kebutuhan proyek. Cek stok dan harga lewat WhatsApp."
+		content="TB. Manon Jaya Putra menyediakan bahan bangunan lengkap untuk renovasi, pembangunan rumah, dan kebutuhan proyek. Cek stok dan harga lewat WhatsApp."
 	/>
 </svelte:head>
 
 <header class="site-header">
-	<a class="brand" href={resolve("/")} aria-label="TB. Manon Jaya">
-		<span class="brand-mark">MJ</span>
+	<a class="brand" href={resolve("/")} aria-label="TB. Manon Jaya Putra">
+		<span class="brand-mark">MJP</span>
 		<span class="brand-copy">
-			<strong>TB. Manon Jaya</strong>
+			<strong>TB. Manon Jaya Putra</strong>
 			<small>Toko Bahan Bangunan</small>
 		</span>
 	</a>
@@ -113,7 +113,7 @@
 			<p class="eyebrow">Bahan bangunan untuk rumah dan proyek</p>
 			<h1 id="hero-title">Material lengkap, belanja jelas, proyek jalan terus.</h1>
 			<p class="hero-lead">
-				TB. Manon Jaya menyediakan kebutuhan bangunan harian sampai kebutuhan
+				TB. Manon Jaya Putra menyediakan kebutuhan bangunan harian sampai kebutuhan
 				proyek, dengan stok jelas, harga masuk akal, dan pengiriman lokal.
 			</p>
 
@@ -183,13 +183,13 @@
 
 	<section id="layanan" class="why-section" aria-labelledby="why-title">
 		<div class="why-heading">
-			<p class="eyebrow">Mengapa TB. Manon Jaya</p>
+			<p class="eyebrow">Mengapa TB. Manon Jaya Putra</p>
 			<h2 id="why-title">Kepercayaan yang dibangun dari generasi ke generasi.</h2>
 		</div>
 
 		<div class="why-story">
 			<p>
-				TB. Manon Jaya bukan toko yang baru belajar melayani kebutuhan bangunan.
+				TB. Manon Jaya Putra bukan toko yang baru belajar melayani kebutuhan bangunan.
 				Cara kerja kami dibentuk dari pengalaman keluarga yang diteruskan, dari
 				memilih barang yang layak, melayani dengan jujur, sampai menjaga hubungan
 				dengan pelanggan yang kembali lagi.
@@ -218,7 +218,7 @@
 			<h2 id="order-title">Mulai dari satu pesan WhatsApp.</h2>
 			<p>
 				Untuk bertanya, cek barang, konsultasi kebutuhan, atau mulai memesan,
-				cukup hubungi nomor WhatsApp TB. Manon Jaya.
+				cukup hubungi nomor WhatsApp TB. Manon Jaya Putra.
 			</p>
 		</div>
 
@@ -248,13 +248,13 @@
 			<p class="eyebrow">Lokasi dan kontak</p>
 			<h2 id="contact-title">Kunjungi toko atau tanya dulu lewat WhatsApp.</h2>
 			<p>
-				Datang langsung ke TB. Manon Jaya di Cisaat, Sukabumi, atau kirim pesan
+				Datang langsung ke TB. Manon Jaya Putra di Cisaat, Sukabumi, atau kirim pesan
 				WhatsApp untuk cek barang sebelum berangkat.
 			</p>
 		</div>
 
 		<div class="contact-layout">
-			<div class="map-frame" aria-label="Peta lokasi TB. Manon Jaya">
+			<div class="map-frame" aria-label="Peta lokasi TB. Manon Jaya Putra">
 				<iframe
 					src={mapEmbedUrl}
 					width="100%"
@@ -263,11 +263,11 @@
 					allowfullscreen
 					loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade"
-					title="Peta lokasi TB. Manon Jaya"
+					title="Peta lokasi TB. Manon Jaya Putra"
 				></iframe>
 			</div>
 
-			<aside class="contact-card" aria-label="Informasi kontak TB. Manon Jaya">
+			<aside class="contact-card" aria-label="Informasi kontak TB. Manon Jaya Putra">
 				<div class="contact-block">
 					<span>Alamat toko</span>
 					<strong>{storeAddress}</strong>
@@ -315,10 +315,10 @@
 
 <footer class="site-footer">
 	<div class="footer-brand">
-		<a class="brand" href={resolve("/")} aria-label="TB. Manon Jaya">
-			<span class="brand-mark">MJ</span>
+		<a class="brand" href={resolve("/")} aria-label="TB. Manon Jaya Putra">
+			<span class="brand-mark">MJP</span>
 			<span class="brand-copy">
-				<strong>TB. Manon Jaya</strong>
+				<strong>TB. Manon Jaya Putra</strong>
 				<small>Toko Bahan Bangunan</small>
 			</span>
 		</a>
@@ -343,7 +343,7 @@
 	</div>
 
 	<div class="footer-bottom">
-		<span>© 2026 TB. Manon Jaya</span>
+		<span>© 2026 TB. Manon Jaya Putra</span>
 		<span>Hubungi toko untuk cek stok terbaru.</span>
 	</div>
 </footer>
@@ -418,7 +418,7 @@
 		place-items: center;
 		border: 2px solid var(--sand);
 		font-family: var(--font-heading);
-		font-size: 0.95rem;
+		font-size: 0.82rem;
 		font-weight: 800;
 		color: var(--sand);
 		letter-spacing: -0.03em;
