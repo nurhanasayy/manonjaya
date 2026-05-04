@@ -250,22 +250,6 @@
 			</div>
 		</div>
 
-		<div class="hero-media" aria-label="Placeholder foto material bangunan">
-			<div class="placeholder-image">
-				<div class="placeholder-label">
-					<span>Placeholder Image</span>
-					<strong>Material display / store photo</strong>
-				</div>
-				<div class="material-stack stack-pipe">Pipa</div>
-				<div class="material-stack stack-paint">Cat</div>
-				<div class="material-stack stack-steel">Besi</div>
-			</div>
-
-			<div class="service-note">
-				<span>Pesan cepat</span>
-				<strong>Kirim daftar barang, kami cek stok dan harga.</strong>
-			</div>
-		</div>
 	</section>
 
 	<section id="produk" class="product-summary" aria-labelledby="product-title">
@@ -482,7 +466,6 @@
 		--clay: #a85232;
 		--oxide: #753721;
 		--sand: #d9c5a5;
-		--steel: #53616a;
 		--line: rgba(29, 27, 22, 0.14);
 	}
 
@@ -599,16 +582,14 @@
 	}
 
 	.hero {
-		display: grid;
-		grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.8fr);
+		display: flex;
 		align-items: center;
-		gap: clamp(34px, 6vw, 88px);
 		min-height: calc(100vh - 77px);
 		padding: clamp(56px, 8vw, 112px) clamp(18px, 5vw, 72px) 72px;
 	}
 
 	.hero-content {
-		max-width: 840px;
+		width: 100%;
 	}
 
 	.eyebrow {
@@ -621,7 +602,6 @@
 	}
 
 	h1 {
-		max-width: 880px;
 		margin: 0;
 		font-family: var(--font-heading);
 		font-size: clamp(3.3rem, 8vw, 8.25rem);
@@ -687,129 +667,6 @@
 		border: 2px solid var(--ink);
 		background: rgba(255, 250, 240, 0.34);
 		color: var(--ink);
-	}
-
-	.hero-media {
-		position: relative;
-		min-height: 610px;
-	}
-
-	.placeholder-image {
-		position: relative;
-		min-height: 560px;
-		overflow: hidden;
-		border: 1px solid rgba(29, 27, 22, 0.16);
-		background:
-			linear-gradient(135deg, rgba(255, 250, 240, 0.22), transparent 48%),
-			linear-gradient(90deg, rgba(255, 250, 240, 0.08) 1px, transparent 1px),
-			linear-gradient(rgba(255, 250, 240, 0.08) 1px, transparent 1px),
-			var(--forest);
-		background-size:
-			auto,
-			32px 32px,
-			32px 32px,
-			auto;
-		box-shadow: 0 30px 70px rgba(31, 52, 36, 0.22);
-	}
-
-	.placeholder-image::before {
-		position: absolute;
-		inset: 18px;
-		border: 1px solid rgba(246, 241, 232, 0.22);
-		content: "";
-	}
-
-	.placeholder-label {
-		position: absolute;
-		top: 34px;
-		left: 34px;
-		z-index: 1;
-		display: grid;
-		gap: 6px;
-		color: var(--paper);
-	}
-
-	.placeholder-label span {
-		color: var(--sand);
-		font-size: 0.76rem;
-		font-weight: 800;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-	}
-
-	.placeholder-label strong {
-		max-width: 210px;
-		font-family: var(--font-heading);
-		font-size: 1.35rem;
-		line-height: 1.05;
-	}
-
-	.material-stack {
-		position: absolute;
-		display: grid;
-		align-items: end;
-		padding: 18px;
-		color: var(--paper);
-		font-family: var(--font-heading);
-		font-weight: 800;
-		text-transform: uppercase;
-		letter-spacing: -0.03em;
-		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
-	}
-
-	.stack-pipe {
-		right: 44px;
-		bottom: 250px;
-		width: min(68%, 360px);
-		height: 122px;
-		background: var(--steel);
-	}
-
-	.stack-paint {
-		right: 80px;
-		bottom: 132px;
-		width: min(58%, 300px);
-		height: 134px;
-		background:
-			linear-gradient(90deg, transparent 48%, rgba(255, 255, 255, 0.12) 49% 51%, transparent 52%),
-			linear-gradient(0deg, transparent 46%, rgba(255, 255, 255, 0.12) 47% 53%, transparent 54%),
-			var(--oxide);
-		background-size: 76px 42px;
-	}
-
-	.stack-steel {
-		left: 42px;
-		bottom: 76px;
-		width: min(62%, 340px);
-		height: 72px;
-		background: linear-gradient(90deg, #66747c, #29343a);
-	}
-
-	.service-note {
-		position: absolute;
-		right: -10px;
-		bottom: 0;
-		display: grid;
-		max-width: 280px;
-		gap: 8px;
-		padding: 20px;
-		background: var(--paper-strong);
-		border: 1px solid var(--line);
-		box-shadow: 0 18px 40px rgba(29, 27, 22, 0.12);
-	}
-
-	.service-note span {
-		color: var(--clay);
-		font-size: 0.78rem;
-		font-weight: 900;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-	}
-
-	.service-note strong {
-		font-family: var(--font-heading);
-		font-size: 1.2rem;
-		line-height: 1.1;
 	}
 
 	.product-summary {
@@ -1409,7 +1266,6 @@
 		}
 
 		.hero {
-			grid-template-columns: 1fr;
 			min-height: auto;
 		}
 
@@ -1437,13 +1293,6 @@
 			grid-template-columns: 1fr;
 		}
 
-		.hero-media {
-			min-height: 500px;
-		}
-
-		.placeholder-image {
-			min-height: 470px;
-		}
 	}
 
 	@media (max-width: 620px) {
@@ -1471,40 +1320,6 @@
 
 		.hero-actions .button {
 			width: 100%;
-		}
-
-		.hero-media {
-			min-height: 430px;
-		}
-
-		.placeholder-image {
-			min-height: 400px;
-		}
-
-		.placeholder-label {
-			top: 26px;
-			left: 26px;
-		}
-
-		.stack-pipe {
-			right: 26px;
-			bottom: 210px;
-		}
-
-		.stack-paint {
-			right: 42px;
-			bottom: 112px;
-		}
-
-		.stack-steel {
-			left: 26px;
-			bottom: 64px;
-		}
-
-		.service-note {
-			right: 12px;
-			left: 12px;
-			max-width: none;
 		}
 
 		.product-summary {
