@@ -129,7 +129,7 @@
 				makesOffer: productGroups.map((group) => ({
 					"@type": "Offer",
 					itemOffered: {
-						"@type": "Product",
+						"@type": "Thing",
 						name: group.name,
 						description: `${group.summary} Contoh: ${group.examples}.`
 					},
